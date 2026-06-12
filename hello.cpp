@@ -192,3 +192,61 @@
 //   cout<<area(4)<<endl;
 //   cout<<area(4,6);
 // }
+
+
+
+
+
+// constructor and destructor question
+// #include<iostream>
+// using namespace std;
+// class Student {
+//     public:
+//     string name;
+//     Student(string n){
+//         name = n;
+//         cout<<"student created";
+//     }
+//     void display() {
+//         cout<<"name:"<<name;
+//     }
+//     ~Student(){
+//         cout<<"student destroyed";
+//     }
+// };
+// int main(){
+//     Student s1("saurabh");
+
+//     s1.display();
+//     return 0;
+// }
+// Encapsulation
+// #include<iostream>
+// using namespace std;
+// class Student {
+//     private:
+//         string name;
+//         int age;
+//     public: 
+//         void setName(string n){
+//             name = n;
+//         }
+//         void setAge(int a){
+//             age = a;
+//         }
+//         void getName(){
+//             cout<<name;
+//         }
+//         void getAge(){
+//             cout<<age;
+//         }
+// };
+// int main(){
+//     Student s1;
+//     s1.setName("saurabh");
+//     s1.setAge(20);
+//     s1.getName();
+//     s1.getAge();
+
+//     return 0;
+// }
