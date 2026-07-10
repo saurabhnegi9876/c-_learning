@@ -250,3 +250,57 @@
 
 //     return 0;
 // }
+// Vectors
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int> vec;
+//     for(int i:vec){
+//         cin>>i;
+//     }
+//     vec.push_back(10);
+//     for (int i = 0; i < vec.size(); i++)
+//     {
+//         cout<<i<<endl;
+//     }
+//     return 0;
+// }
+/* Q1. Student Marks Management System
+
+Ek program banao jisme students ke marks store ho.
+
+Example:
+
+Input:
+5
+90 85 76 88 92
+
+Output:
+Highest Marks = 92
+Lowest Marks = 76
+Average = 86.2
+*/
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    int students;
+    cout<<"Enter the number of students are there"<<endl;
+    cin>>students;
+    vector<int> marks;
+    int mark;
+    cout<<"Enter the marks of the students"<<endl;
+    for (int i = 0; i < students; i++)
+    {
+        cin>>mark;
+        marks.push_back(mark);
+    }
+    int highest_marks=marks[0];
+    for (int i = 0; i < marks[students]; i++)
+    {
+                                                                   
+    }
+    
+    return 0;
+}
