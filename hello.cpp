@@ -297,10 +297,28 @@ int main(){
         marks.push_back(mark);
     }
     int highest_marks=marks[0];
-    for (int i = 0; i < marks[students]; i++)
+    for (int i = 0; i < students; i++)
     {
-                                                                   
+        if(marks[i]>= highest_marks){
+            highest_marks= marks[i];
+        }                                    
     }
-    
+    cout<<"Highest marks is: "<<highest_marks<<endl;
+    int lowest_marks = marks[0];
+    for (int i = 0; i < students; i++)
+    {
+        if(marks[i]<= lowest_marks){
+            lowest_marks = marks[i];
+        }
+    }
+    cout<<"Lowest marks: "<<lowest_marks<<endl;
+    float average;
+    float sum = 0;
+    for (int i = 0; i < students; i++)
+    {
+        sum = sum+marks[i];
+    }
+    average = sum/students;
+    cout<<"Average marks: "<<average;
     return 0;
 }
