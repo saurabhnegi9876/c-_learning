@@ -84,9 +84,6 @@
 //   return 0;
 // }
 
-
-
-
 // #include <iostream>
 // using namespace std;
 // class car {
@@ -98,9 +95,6 @@
 // int main(){
 //   car c1;
 // }
-
-
-
 
 // #include <iostream>
 // using namespace std;
@@ -120,9 +114,9 @@
 // #include<iostream>
 // using namespace std;
 // class Student {
-//   private: 
+//   private:
 //     int marks;
-//   public: 
+//   public:
 //     void setMarks(){
 //       marks = 432;
 //     }
@@ -137,17 +131,12 @@
 //   return 0;
 // }
 
-
-
-
-
-
 // #include<iostream>
 // using namespace std;
 // class bankAccount {
-//   private: 
+//   private:
 //     int balance;
-//   public: 
+//   public:
 //     int deposit(){
 //       int amount;
 //       cout<<"Enter the deposit amout"<<endl;
@@ -177,9 +166,6 @@
 //   return 0;
 // }
 
-
-
-
 // #include<iostream>
 // using namespace std;
 // double area(int a){
@@ -192,10 +178,6 @@
 //   cout<<area(4)<<endl;
 //   cout<<area(4,6);
 // }
-
-
-
-
 
 // constructor and destructor question
 // #include<iostream>
@@ -227,7 +209,7 @@
 //     private:
 //         string name;
 //         int age;
-//     public: 
+//     public:
 //         void setName(string n){
 //             name = n;
 //         }
@@ -266,59 +248,371 @@
 //     }
 //     return 0;
 // }
-/* Q1. Student Marks Management System
 
-Ek program banao jisme students ke marks store ho.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int students;
+//     cout<<"Enter the number of students are there"<<endl;
+//     cin>>students;
+//     vector<int> marks;
+//     int mark;
+//     cout<<"Enter the marks of the students"<<endl;
+//     for (int i = 0; i < students; i++)
+//     {
+//         cin>>mark;
+//         marks.push_back(mark);
+//     }
+//     int highest_marks=marks[0];
+//     for (int i = 0; i < students; i++)
+//     {
+//         if(marks[i]>= highest_marks){
+//             highest_marks= marks[i];
+//         }
+//     }
+//     cout<<"Highest marks is: "<<highest_marks<<endl;
+//     int lowest_marks = marks[0];
+//     for (int i = 0; i < students; i++)
+//     {
+//         if(marks[i]<= lowest_marks){
+//             lowest_marks = marks[i];
+//         }
+//     }
+//     cout<<"Lowest marks: "<<lowest_marks<<endl;
+//     float average;
+//     float sum = 0;
+//     for (int i = 0; i < students; i++)
+//     {
+//         sum = sum+marks[i];
+//     }
+//     average = sum/students;
+//     cout<<"Average marks: "<<average;
+//     return 0;
+// }
 
-Example:
+// Q1. Student Marks Management System
 
-Input:
-5
-90 85 76 88 92
+// Ek program banao jisme students ke marks store ho.
 
-Output:
-Highest Marks = 92
-Lowest Marks = 76
-Average = 86.2
-*/
-#include<iostream>
-#include<vector>
-using namespace std;
-int main(){
-    int students;
-    cout<<"Enter the number of students are there"<<endl;
-    cin>>students;
-    vector<int> marks;
-    int mark;
-    cout<<"Enter the marks of the students"<<endl;
-    for (int i = 0; i < students; i++)
-    {
-        cin>>mark;
-        marks.push_back(mark);
-    }
-    int highest_marks=marks[0];
-    for (int i = 0; i < students; i++)
-    {
-        if(marks[i]>= highest_marks){
-            highest_marks= marks[i];
-        }                                    
-    }
-    cout<<"Highest marks is: "<<highest_marks<<endl;
-    int lowest_marks = marks[0];
-    for (int i = 0; i < students; i++)
-    {
-        if(marks[i]<= lowest_marks){
-            lowest_marks = marks[i];
-        }
-    }
-    cout<<"Lowest marks: "<<lowest_marks<<endl;
-    float average;
-    float sum = 0;
-    for (int i = 0; i < students; i++)
-    {
-        sum = sum+marks[i];
-    }
-    average = sum/students;
-    cout<<"Average marks: "<<average;
-    return 0;
-}
+// Example:
+
+// Input:
+// 5
+// 90 85 76 88 92
+
+// Output:
+// Highest Marks = 92
+// Lowest Marks = 76
+// Average = 86.2
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int students;
+//     cout<<"Enter the number of students: "<<endl;
+//     cin>>students;
+//     if(students<=0){
+//         cout<<"No student found"<<endl;
+//         return 0;
+//     }
+//     int mark;
+//     vector<int> marks;
+//     cout<<"Enter the marks of the students: "<<endl;
+//     for (int i = 0; i < students; i++)
+//     {
+//         cin>>mark;
+//         marks.push_back(mark);
+//     }
+//     int highest_mark = marks[0];
+//     int lowest_mark = marks[0];
+//     float sum = 0;
+//     float average;
+//     for (int i = 0; i < students; i++)
+//     {
+//         if(marks[i]>=highest_mark){
+//             highest_mark = marks[i];
+//         }
+//         if(marks[i]<=lowest_mark){
+//             lowest_mark = marks[i];
+//         }
+//         sum = sum+marks[i];
+//     }
+//     average = sum/students;
+//     cout<<"Highest marks"<<highest_mark<<endl;
+//     cout<<"Lowest marks"<<lowest_mark<<endl;
+//     cout<<"Average marks"<<average<<endl;
+//     return 0;
+// }
+// 1. Sum of Array
+// Q1.
+
+// Store marks of 10 students in a vector and print the total marks.
+
+// Example:
+
+// Input:
+// 50 60 70 80 90 40 30 20 10 100
+
+// Output:
+// 550
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int students;
+//     cin>>students;
+//     vector<int> marks(students);
+//     int sum = 0;
+//     for (int i = 0; i < students; i++)
+//     {
+//         cin>>marks[i];
+//         sum +=marks[i];
+//     }
+//     cout<<"sum: "<<sum;
+//     return 0;
+// }
+// 2. Average
+// Q3.
+
+// Find the average of N numbers.
+
+// Example
+
+// Input
+// 5
+// 10 20 30 40 50
+
+// Output
+// 30
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int numbers;
+//     cin>>numbers;
+//     vector<int> values(numbers);
+//     float average;
+//     int sum = 0;
+//     for (int i = 0; i < numbers; i++)
+//     {
+//         cin>>values[i];
+//         sum += values[i];
+//     }
+//     average = (float)sum/numbers;
+//     cout<<"average: "<<average;
+//     return 0;
+// }
+// // Q11.
+
+// // Count how many even numbers are present.
+
+// // Example
+
+// // Input
+// // 6
+// // 1 2 3 4 5 6
+
+// // Output
+// // Even = 3
+// // Odd = 3
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     cout<<"Enter the numbers how many u want to write: "<<endl;
+//     int numbers;
+//     cin>>numbers;
+//     int even = 0;
+//     int odd = 0;
+//     vector<int> value(numbers);
+//     for (int i = 0; i < numbers; i++)
+//     {
+//         cin>>value[i];
+//         if(value[i]%2==0){
+//             even++;
+//         }
+//         else{
+//             odd++;
+//         }
+//     }
+//     cout<<"Total even numbers are: "<<even;
+//     cout<<"Total odd numbers are: "<<odd;
+//     return 0;
+// }
+// 6. Linear Search
+// Q14.
+
+// Search an element in the array.
+
+// If found print index.
+
+// Else print
+
+// Not Found
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int num;
+//     cout<<"how many numbers you want to write: "<<endl;
+//     cin>>num;
+//     if(num<=0){
+//         cout<<"0 and negative values are not allowed"<<endl;
+//         return 0;
+//     }
+//     vector<int> numbers;
+//     int temp_num;
+//     int find_num;
+//     cout<<"enter the number: "<<endl;
+//     for (int i = 0; i < num; i++)
+//     {
+//         cin>>temp_num;
+//         numbers.push_back(temp_num);
+//     }
+//     cout<<"Enter the number whose index you want to find: "<<endl;
+//     cin>>find_num;
+//     for (int i = 0; i < numbers.size(); i++)
+//     {
+//         if(find_num==numbers[i]){
+//             cout<<i;
+//             return 0;
+//         }
+//     }
+//     cout<<"No value found";
+//     return 0;
+// }
+// 7. Frequency of an Element
+// Q17.
+
+// Count how many times a number occurs.
+
+// Example
+
+// Input
+// 7
+
+// 1 2 3 2 5 2 7
+
+// Find = 2
+
+// Output
+// 3
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+// int main()
+// {
+//     int num;
+//     int temp_num;
+//     int count = 0;
+//     cout << "how many numbers you want to write: " << endl;
+//     int find_num;
+//     cin >> num;
+//     if (num <= 0)
+//     {
+//         cout << "0 and negative values not allowed" << endl;
+//         return 0;
+//     }
+//     vector<int> numbers(num);
+//     cout << "Enter the number: " << endl;
+//     for (int i = 0; i < num; i++)
+//     {
+//         cin >> numbers[i];
+//         numbers[i] = numbers[i]+5;
+//     }
+//     cout << "Enter the number which u want to find: " << endl;
+//     cin >> find_num;
+//     for (int i = 0; i < numbers.size(); i++)
+//     {
+//         if (find_num == numbers[i])
+//         {
+//             count++;
+//         }
+//     }
+//     cout << count;
+//     return 0;
+// }
+// 11. Second Largest
+// Q30.
+
+// Find the second highest marks.
+
+// Example
+
+// Input
+
+// 5
+
+// 10 40 80 90 70
+
+// Output
+
+// 80
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int num;
+//     cout<<"How many numbers you want to write: "<<endl;
+//     cin>>num;
+//     vector<int> numbers(num);
+//     cout<<"Enter the numbers: "<<endl;
+//     for (int i = 0; i < num; i++)
+//     {
+//         cin>>numbers[i];
+//     }
+//     int highest_number = numbers[0];
+//     int second_highest_number = numbers[1];
+//     for (int i = 0; i < numbers.size(); i++)
+//     {
+//         if(numbers[i]>=highest_number){
+//             second_highest_number = highest_number;
+//             highest_number= numbers[i];
+//         }
+//         else if(numbers[i]> second_highest_number && numbers[i]!=highest_number){
+//             second_highest_number =  numbers[i];
+//         }
+//     }
+//     cout<<"Second highest number: "<<second_highest_number<<endl;
+//     return 0;
+// }
+// 12. Check Sorted
+// Q33.
+
+// Check whether array is sorted in ascending order.
+
+// Output
+
+// YES
+
+// or
+
+// NO
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int num;
+//     cout<<"How many numbers do u want to write: "<<endl;
+//     cin>>num;
+//     cout<<"Enter the numbers: "<<endl;
+//     vector<int> numbers(num);
+//     for (int i = 0; i < num; i++)
+//     {
+//         cin>>numbers[i];
+//     }
+
+//     for (int i = 0; i < num; i++)
+//     {
+//         if(numbers[i+1]>=numbers[i]){
+//             cout<<"no";
+//             return 0;
+//         }
+//         else{
+//             cout<<"yes";
+//         }
+//     }
+    
+//     return 0;
+// }
