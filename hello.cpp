@@ -615,4 +615,91 @@
 //     }
     
 //     return 0;
+// }Q30.
+
+// Find the second highest marks.
+
+// Example
+
+// Input
+
+// 5
+
+// 10 40 80 90 70
+
+// Output
+
+// 80
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int num;
+//     cout<<"Enter how many numbers you want to write: "<<endl;
+//     cin>>num;
+//     if(num<=0){
+//         cout<<"0 and negative values are not allowed"<<endl;
+//         return 0;
+//     }
+//     vector <int> numbers(num);
+//     for (int i = 0; i < num; i++)
+//     {
+//         cin>>numbers[i];
+//     }
+    
+//     int highest_number = numbers[0];
+//     int second_highest_number = numbers[0];
+//     for (int i = 0; i < num; i++)
+//     {
+//         if (numbers[i]>highest_number)
+//         {
+//             second_highest_number = highest_number;
+//             highest_number = numbers[i];
+//         }
+//         else if(numbers[i]>=second_highest_number && numbers[i]!=highest_number){
+//             second_highest_number = numbers[i];
+//         }
+//     }
+//     cout<<"Second highest number is: "<<second_highest_number<<endl;
+//     return 0;
+// }
+// 12. Check Sorted
+// Q33.
+
+// Check whether array is sorted in ascending order.
+
+// Output
+
+// YES
+
+// or
+
+// NO
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int num;
+//     cout<<"How many numbers of array it is: "<<endl;
+//     cin>>num;
+//     if(num<=0){
+//         cout<<"Negative and 0 values are not allowed"<<endl;
+//         return 0;
+//     }
+//     vector <int>arr(num);
+//     cout<<"Enter the numbers: "<<endl;
+//     for (int i = 0; i < num; i++)
+//     {
+//         cin>>arr[i];
+//     }
+//     for (int i = 0; i < arr.size()-1; i++)
+//     {
+//         if(arr[i]>=arr[i+1]){
+//             cout<<"No"<<endl;
+//             return 0;
+//         }
+//     }
+//     cout<<"yes";
+    
+//     return 0;
 // }
