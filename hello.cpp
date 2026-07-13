@@ -703,3 +703,129 @@
     
 //     return 0;
 // }
+// 1. Insert Element at Given Position ⭐⭐⭐
+
+// Concept:
+
+// Shift elements to right
+// Increase size
+// Boundary cases
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int> arr={1,7,11,15,19,25,76};
+//     arr.resize(8);
+//     int position;
+//     cout<<"Enter the position"<<endl;
+//     cin>>position;
+//     int value;
+//     cout<<"Enter the value you want to insert: "<<endl;
+//     cin>>value;
+//     for (int i = position-1; i > arr.size()-1; i--)
+//     {
+//         arr[i+1] = arr[i];
+//     }
+//     arr[position-1] = value;
+    
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<< arr[i]<< " ";
+//     }
+    
+    
+//     return 0;
+// }
+// 1. Insert Element at Given Position ⭐⭐⭐
+
+// Concept:
+
+// Shift elements to right
+// Increase size
+// Boundary cases
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int position;
+//     int value;
+//     vector<int> arr={1,7,11,15,19,25,76};
+//     cout<<"Enter the Position from 1 to "<<arr.size()+1 <<endl;
+//     cin>>position;
+//     cout<<"Enter the value: "<<endl;
+//     cin>>value;
+//     if(position<1 || position> arr.size()+1){
+//         cout<<"Invalid position"<<endl;
+//         return 0;
+//     }
+//     arr.resize(arr.size()+1);
+//     for (int i = arr.size()-2; i >= position-1; i--)
+//     {
+//         arr[i+1] = arr[i];
+//     }
+//     arr[position-1] = value;
+//     for (int i = 0; i <arr.size() ; i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+    
+//     return 0;
+// }
+// 2. Delete Element from Given Position ⭐⭐⭐
+
+// Concept:
+
+// Shift elements to left
+// Decrease size
+// Boundary cases
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int position, value;
+//     vector<int> arr={1,7,11,15,19,25,76};
+//     cout<<"Enter the Position from 1 to "<<arr.size()-1 <<endl;
+//     cin>>position;
+//     if(position<1 || position> arr.size()-1){
+//         cout<<"Invalid postion"<<endl;
+//         return 0;
+//     }
+//     for (int i = position-1; i <arr.size()-1 ; i++)
+//     {
+//         arr[i]=arr[i+1];
+//     }
+//     arr.resize(arr.size()-1);
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+    
+//     return 0;
+// }
+// 3. Update an Element ⭐
+
+// Concept:
+
+// Replace value at index
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    int position, value;
+    vector<int> arr={1,7,11,15,19,25,76};
+    cout<<"Enter the Position from 1 to "<<arr.size() <<endl;
+    cin>>position;
+    if(position<1 || position> arr.size()){
+        cout<<"Invalid postion"<<endl;
+        return 0;
+    }
+    cout<<"Enter the value: "<<endl;
+    cin>>value;
+    arr[position-1] = value;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+    
