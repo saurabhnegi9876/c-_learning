@@ -807,25 +807,113 @@
 // Concept:
 
 // Replace value at index
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int position, value;
+//     vector<int> arr={1,7,11,15,19,25,76};
+//     cout<<"Enter the Position from 1 to "<<arr.size() <<endl;
+//     cin>>position;
+//     if(position<1 || position> arr.size()){
+//         cout<<"Invalid postion"<<endl;
+//         return 0;
+//     }
+//     cout<<"Enter the value: "<<endl;
+//     cin>>value;
+//     arr[position-1] = value;
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+//     return 0;
+// }
+// 4. Reverse an Array (Two Pointers) ⭐⭐⭐⭐
+
+// Concept:
+
+// Swapping
+// Two pointers
+// Very important
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int> arr={3,6,7,10,24,34,654,34};
+//     //initializing pointer
+//     int left = 0;
+//     int right = arr.size()-1;
+//     int temp;
+//     while (left<right)
+//     {
+//         temp = arr[left];
+//         arr[left] = arr[right];
+//         arr[right] = temp;
+//         left++;
+//         right--;
+//     }
+    
+//     // for (int i = 0; i < arr.size()/2; i++)
+//     // {
+//     //     temp = arr[i];
+//     //     arr[i]=arr[arr.size()-1-i];
+//     //     arr[arr.size()-1-i] = temp;
+//     // }
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+    
+    
+//     return 0;
+// }
+// // 5. Left Rotate Array by One ⭐⭐⭐
+
+// // Concept:
+
+// // Store first element
+// // Shift left
+// // Put stored element at end
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int> arr{2,53,64,23,75,87,56,54,324,564};
+//     int temp;
+//     temp = arr[0];
+//     for (int i = 0; i < arr.size()-1; i++)
+//     {
+//         arr[i] = arr[i+1];
+//     }
+//     arr[arr.size()-1] = temp;
+//         for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+//     return 0;
+// }
+// 6. Right Rotate Array by One ⭐⭐⭐
+
+// Concept:
+
+// Store last element
+// Shift right
+// Put stored element at beginning
 #include<iostream>
 #include<vector>
 using namespace std;
 int main(){
-    int position, value;
-    vector<int> arr={1,7,11,15,19,25,76};
-    cout<<"Enter the Position from 1 to "<<arr.size() <<endl;
-    cin>>position;
-    if(position<1 || position> arr.size()){
-        cout<<"Invalid postion"<<endl;
-        return 0;
+    vector<int> arr{2,53,64,23,75,87,56,54,324,564};
+    int temp;
+    temp = arr[arr.size()-1];
+    for (int i = arr.size()-1; i >=1; i--)
+    {
+        arr[i] = arr[i-1];
     }
-    cout<<"Enter the value: "<<endl;
-    cin>>value;
-    arr[position-1] = value;
-    for (int i = 0; i < arr.size(); i++)
+    arr[0] = temp;
+        for (int i = 0; i < arr.size(); i++)
     {
         cout<<arr[i]<<" ";
     }
     return 0;
 }
-    
