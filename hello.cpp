@@ -899,21 +899,56 @@
 // Store last element
 // Shift right
 // Put stored element at beginning
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int> arr{2,53,64,23,75,87,56,54,324,564};
+//     int temp;
+//     temp = arr[arr.size()-1];
+//     for (int i = arr.size()-1; i >=1; i--)
+//     {
+//         arr[i] = arr[i-1];
+//     }
+//     arr[0] = temp;
+//         for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+//     return 0;
+// }
+// 7. Left Rotate by K Places ⭐⭐⭐⭐⭐
+
+// Concept:
+
+// k %= n
+// Multiple rotations
+// Efficient thinking
 #include<iostream>
 #include<vector>
 using namespace std;
 int main(){
-    vector<int> arr{2,53,64,23,75,87,56,54,324,564};
+    vector<int> arr={4,2,5,7,45,23,675,34,54,23};
+    int rotations;
+    cout<<"Enter how many rotations you want:"<<endl;
+    cin>>rotations;
     int temp;
-    temp = arr[arr.size()-1];
-    for (int i = arr.size()-1; i >=1; i--)
+    // int effective_roations = rotations%arr.size();
+    for (int i = 0; i < rotations; i++)
     {
-        arr[i] = arr[i-1];
-    }
-    arr[0] = temp;
+        temp = arr[i];
         for (int i = 0; i < arr.size(); i++)
+        {
+            arr[i] = arr[i+1];
+        }
+        arr[arr.size()-1-i] = temp;
+    }
+    for (int i = 0; i < arr.size(); i++)
     {
         cout<<arr[i]<<" ";
     }
+    
     return 0;
+
+
 }
