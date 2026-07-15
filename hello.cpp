@@ -917,38 +917,119 @@
 //     }
 //     return 0;
 // }
-// 7. Left Rotate by K Places ⭐⭐⭐⭐⭐
+// // 7. Left Rotate by K Places ⭐⭐⭐⭐⭐
+
+// // Concept:
+
+// // k %= n
+// // Multiple rotations
+// // Efficient thinking
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int> arr={4,2,5,7,45,23,675,34,54,23};
+//     int rotations;
+//     cout<<"Enter how many rotations you want:"<<endl;
+//     cin>>rotations;
+//     int effective_rotations;
+//     effective_rotations = rotations%arr.size();
+//     int temp;
+//     for (int i = 0; i < effective_rotations; i++)
+//     {
+//         temp = arr[0];
+//         for (int i = 0; i < arr.size()-1; i++)
+//         {
+//             arr[i] = arr[i+1];
+//         }
+//         arr[arr.size()-1] = temp;
+//     }
+    
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+    
+//     return 0;
+// }
+// 8. Right Rotate by K Places ⭐⭐⭐⭐⭐
 
 // Concept:
 
 // k %= n
-// Multiple rotations
-// Efficient thinking
-#include<iostream>
-#include<vector>
-using namespace std;
-int main(){
-    vector<int> arr={4,2,5,7,45,23,675,34,54,23};
-    int rotations;
-    cout<<"Enter how many rotations you want:"<<endl;
-    cin>>rotations;
-    int temp;
-    // int effective_roations = rotations%arr.size();
-    for (int i = 0; i < rotations; i++)
-    {
-        temp = arr[i];
-        for (int i = 0; i < arr.size(); i++)
-        {
-            arr[i] = arr[i+1];
-        }
-        arr[arr.size()-1-i] = temp;
-    }
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout<<arr[i]<<" ";
-    }
+// Reverse method (industry standard)
+// Good interview question
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int> arr={10,20,30,40,50};
+//     if(arr.empty()){
+//         return 0;
+//     }
+//     int rotations;
+//     cout<<"How many rotations you want: "<<endl;
+//     cin>>rotations;
+//     int temp;
+//     int effective_rotations = rotations%arr.size();
+//     for (int i = 0; i < effective_rotations; i++)
+//     {
+//         temp = arr[arr.size()-1];
+//         for (int i = arr.size()-2; i >= 0; i--)
+//         {
+//             arr[i+1] = arr[i];
+//         }
+//         arr[0] = temp;    
+//     }
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+//     return 0;
+// }
+// 9. Insert Element in a Sorted Array ⭐⭐⭐⭐
+
+// Example:
+
+// 1 3 5 7 9
+
+// Insert 4
+
+// Output:
+// 1 3 4 5 7 9
+
+// Concept:
+
+// Find correct position
+// Shift
+// Maintain sorted order
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int> arr={10,20,30,40,50};
+//     if(arr.empty()){
+//         return 0;
+//     }
+//     int value;
+//     cout<<"Enter the value: ";
+//     cin>>value;
+//     arr.resize(arr.size()+1);
+//     for (int i = 0; i < arr.size()-1; i++)
+//     {
+//         if(arr[i]<=value && value<=arr[i+1]){
+//             for (int j = arr.size()-2; j >=i+1; j++)            
+//             {
+//                 arr[j+1] = arr[j];
+//             }
+//              arr[i+1] = value;
+//         }
+//     }
     
-    return 0;
-
-
-}
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+    
+//     return 0;
+// }
