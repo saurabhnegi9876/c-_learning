@@ -1033,3 +1033,226 @@
     
 //     return 0;
 // }
+// Given an array,
+
+// {5, 2, 8, 1, 9, 3, 2, 8}
+
+// Perform the following operations using STL:
+
+// Sort the array
+// Reverse the array
+// Find maximum element
+// Find minimum element
+// Count occurrences of 2
+// Concepts Covered
+
+// ✅ sort()
+
+// ✅ reverse()
+
+// ✅ max_element()
+
+// ✅ min_element()
+
+// ✅ count()
+// #include<iostream>
+// #include<algorithm>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int> arr={5,2,8,1,9,3,2,8};
+//     // sort(arr.begin(),arr.end());
+//     // reverse(arr.begin(),arr.end());
+//     cout<< *min_element(arr.begin(),arr.end());
+//     cout<< count(arr.begin(),arr.end(), 9);
+//     // for (int i = 0; i < arr.size(); i++)
+//     // {
+//     //     cout<<arr[i]<<" ";
+//     // }
+    
+//     return 0;
+// }
+// Question 2 ⭐⭐⭐⭐ (Searching)
+
+// Given
+
+// {10, 20, 30, 40, 50, 60, 70}
+
+// Take an element from user.
+
+// Check
+
+// Does element exist?
+// If yes print its index.
+// Otherwise print Not Found.
+
+// Restriction:
+
+// Use STL only.
+
+// Concepts Covered
+
+// ✅ find()
+
+// ✅ distance()
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     vector<int> arr={10, 20, 30, 40, 50, 60, 70};
+//     int num;
+//     cout<<"Enter the number: "<<endl;
+//     cin>>num;
+//     auto it = find(arr.begin(), arr.end(), num);
+//     if(it != arr.end()){
+//         cout<<distance(arr.begin(), it);
+//     }
+//     else{
+//         cout<<"Index not found"<<endl;
+//     }
+//     return 0;
+// }
+// // Question 3 ⭐⭐⭐⭐ (Binary Search)
+
+// // Given
+
+// // {45,12,67,23,89,34,90,11}
+
+// // Take a value from user.
+
+// // Without writing Binary Search manually,
+
+// // Check whether the value exists.
+
+// // Hint:
+
+// // Remember binary_search() works only on sorted arrays.
+
+// // Concepts Covered
+
+// // ✅ sort()
+
+// // ✅ binary_search()
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     vector<int> arr={45,12,67,23,89,34,90,11};
+//     sort(arr.begin(),arr.end());
+//     int num;
+//     cout<<"Enter the number: "<<endl;
+//     cin>>num;
+    
+//     cout<<binary_search(arr.begin(), arr.end(), num);
+    
+//     return 0;
+// }
+// Question 4 ⭐⭐⭐⭐⭐ (Mini STL Challenge)
+
+// Given
+
+// {9,4,6,2,8,1,5,7}
+
+// Perform:
+
+// Sort
+// Reverse
+// Search for 6
+// Print largest element
+// Print smallest element
+// Count occurrence of 5
+
+// Everything should be done using STL algorithms.
+
+// Concepts Covered
+
+// ✅ sort()
+
+// ✅ reverse()
+
+// ✅ find()
+
+// ✅ max_element()
+
+// ✅ min_element()
+
+// ✅ count()
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     bool num;
+//     vector<int> arr={9,4,6,2,8,1,5,7};
+//     sort(arr.begin(), arr.end());
+//     reverse(arr.begin(), arr.end());
+//     auto num = find(arr.begin(), arr.end(), 6);
+//     cout<<*num<<endl;
+//     cout<< *max_element(arr.begin(), arr.end())<<endl;
+//     cout<< *min_element(arr.begin(), arr.end())<<endl;
+//     cout<<"occurance of 5 is: "<< count(arr.begin(), arr.end(), 5)<<endl;
+//     return 0;
+// }
+// Question 5 ⭐⭐⭐⭐⭐ (Interview Style)
+
+// Input
+
+// n
+
+// Array
+
+// Example
+
+// 8
+
+// 4 7 2 9 1 7 5 8
+
+// Take another integer x.
+
+// Output
+
+// Sorted Array
+// Maximum
+// Minimum
+// Frequency of x
+// Whether x exists
+// If exists, print index after sorting
+// Check binary search result
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(){
+    int num;
+    cout<<"Enter how many numbers you want to write: "<<endl;
+    cin>>num;
+    vector<int> arr(num);
+    cout<<"Please enter the array: "<<endl;
+    for (int i = 0; i < num; i++)
+    {
+        cin>>arr[i];
+    }
+    sort(arr.begin(), arr.end());
+    cout<<*max_element(arr.begin(), arr.end())<<endl;
+    cout<<*min_element(arr.begin(), arr.end())<<endl;
+    int number;
+    cout<<"Enter the frequency of element you want to find: "<<endl;
+    cin>>number;
+    auto it = count(arr.begin(), arr.end(), number);
+    if(it != arr.end()){
+        cout<<"Not found"<<endl;
+    }
+    else if (it)
+    {
+        cout<<it<<endl;
+    }
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    
+    
+    return 0;
+}
