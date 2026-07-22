@@ -1220,39 +1220,77 @@
 // Whether x exists
 // If exists, print index after sorting
 // Check binary search result
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     int num;
+//     cout<<"Enter how many numbers you want to write: "<<endl;
+//     cin>>num;
+//     vector<int> arr(num);
+//     cout<<"Please enter the array: "<<endl;
+//     for (int i = 0; i < num; i++)
+//     {
+//         cin>>arr[i];
+//     }
+//     sort(arr.begin(), arr.end());
+//     cout<<*max_element(arr.begin(), arr.end())<<endl;
+//     cout<<*min_element(arr.begin(), arr.end())<<endl;
+//     int number;
+//     cout<<"Enter the frequency of element you want to find: "<<endl;
+//     cin>>number;
+//     auto it = count(arr.begin(), arr.end(), number);
+//     if(it != arr.end()){
+//         cout<<"Not found"<<endl;
+//     }
+//     else if (it)
+//     {
+//         cout<<it<<endl;
+//     }
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+    
+    
+//     return 0;
+// }
+//Binary Search
 #include<iostream>
 #include<vector>
-#include<algorithm>
 using namespace std;
+void binary_search();
 int main(){
+    vector<int> arr={1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31};
     int num;
-    cout<<"Enter how many numbers you want to write: "<<endl;
+    cout<<"Enter the number you want to search from the array 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31"<<endl;
     cin>>num;
-    vector<int> arr(num);
-    cout<<"Please enter the array: "<<endl;
-    for (int i = 0; i < num; i++)
-    {
-        cin>>arr[i];
+    void binary_search(){
+        int start = 0;
+        int end = arr.size()-2;
+        int target = num;
+        int middle = (start+end)/2;
+        while(start<=end)
+        {
+            if(target = arr[middle]){
+                cout<<middle<<endl;
+                return 0;
+            }
+            if (target<arr[middle])
+            {
+                end = middle-1;
+
+            }
+            else if(target>arr[middle]){
+                start = middle+1;
+
+            }
+            
+            }
+
+        }
+        }
     }
-    sort(arr.begin(), arr.end());
-    cout<<*max_element(arr.begin(), arr.end())<<endl;
-    cout<<*min_element(arr.begin(), arr.end())<<endl;
-    int number;
-    cout<<"Enter the frequency of element you want to find: "<<endl;
-    cin>>number;
-    auto it = count(arr.begin(), arr.end(), number);
-    if(it != arr.end()){
-        cout<<"Not found"<<endl;
-    }
-    else if (it)
-    {
-        cout<<it<<endl;
-    }
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-    
-    
     return 0;
 }
