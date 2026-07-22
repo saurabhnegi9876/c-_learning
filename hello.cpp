@@ -1257,40 +1257,79 @@
 //     return 0;
 // }
 //Binary Search
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void binary_search();
+// int main(){
+//     vector<int> arr={1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31};
+//     int num;
+//     cout<<"Enter the number you want to search from the array 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31"<<endl;
+//     cin>>num;
+//     void binary_search(){
+//         int start = 0;
+//         int end = arr.size()-2;
+//         int target = num;
+//         int middle = (start+end)/2;
+//         while(start<=end)
+//         {
+//             if(target = arr[middle]){
+//                 cout<<middle<<endl;
+//                 return 0;
+//             }
+//             if (target<arr[middle])
+//             {
+//                 end = middle-1;
+
+//             }
+//             else if(target>arr[middle]){
+//                 start = middle+1;
+
+//             }
+            
+//             }
+
+//         }
+//         }
+//     }
+//     return 0;
+// }
+
 #include<iostream>
 #include<vector>
 using namespace std;
-void binary_search();
-int main(){
-    vector<int> arr={1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31};
-    int num;
-    cout<<"Enter the number you want to search from the array 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31"<<endl;
-    cin>>num;
-    void binary_search(){
-        int start = 0;
-        int end = arr.size()-2;
+int binary_search(vector<int> &arr, int num){
+    int start = 0;
+        int end = arr.size()-1;
         int target = num;
         int middle = (start+end)/2;
-        while(start<=end)
-        {
-            if(target = arr[middle]){
-                cout<<middle<<endl;
-                return 0;
+        while(start<=end){
+            middle = (start+end)/2;
+            if(arr[middle] == target){
+                return middle;
             }
-            if (target<arr[middle])
-            {
+            else if(arr[middle]>target){
                 end = middle-1;
-
             }
-            else if(target>arr[middle]){
+            else if(arr[middle]<target){
                 start = middle+1;
-
             }
-            
-            }
-
         }
-        }
+}
+int main(){
+    vector<int> arr={1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45};
+    int num;
+    cout<<"Enter the odd number: "<<endl;
+    cin>>num;
+    if(num<=0){
+        cout<<"0 and negative numbers are not allowed"<<endl;
+        return 0;
     }
+    if(num%2==0){
+        cout<<"even numbers not allowed: "<<endl;
+        return 0;
+    }
+    int index = binary_search(arr, num);
+    cout<<index<<endl;
     return 0;
 }
