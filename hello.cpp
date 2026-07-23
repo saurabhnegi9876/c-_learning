@@ -1295,41 +1295,131 @@
 //     return 0;
 // }
 
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int binary_search(vector<int> &arr, int num){
+//     int start = 0;
+//         int end = arr.size()-1;
+//         int target = num;
+//         int middle = (start+end)/2;
+//         while(start<=end){
+//             middle = (start+end)/2;
+//             if(arr[middle] == target){
+//                 return middle;
+//             }
+//             else if(arr[middle]>target){
+//                 end = middle-1;
+//             }
+//             else if(arr[middle]<target){
+//                 start = middle+1;
+//             }
+//         }
+// }
+// int main(){
+//     vector<int> arr={1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45};
+//     int num;
+//     cout<<"Enter the odd number: "<<endl;
+//     cin>>num;
+//     if(num<=0){
+//         cout<<"0 and negative numbers are not allowed"<<endl;
+//         return 0;
+//     }
+//     if(num%2==0){
+//         cout<<"even numbers not allowed: "<<endl;
+//         return 0;
+//     }
+//     int index = binary_search(arr, num);
+//     cout<<index<<endl;
+//     return 0;
+// }
+
+
+
+
+// Question: Range Sum Query
+
+// Ek integer array diya gaya hai.
+
+// arr = {2, 4, 6, 8, 10, 12, 14}
+
+// Aur user se do indices L aur R input lo.
+
+// Tumhe L se R (inclusive) tak ke sabhi elements ka sum print karna hai.
+
+// Example 1
+// Input:
+// L = 2
+// R = 5
+
+// Subarray:
+
+// 6 8 10 12
+
+// Output:
+
+// 36
+// Example 2
+// Input:
+// L = 0
+// R = 3
+
+// Subarray:
+
+// 2 4 6 8
+
+// Output:
+
+// 20
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int prefix_sum(vector<int> &arr, vector<int> &arr1, int left, int right){
+//     int sum = 0;
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         sum = sum + arr[i];
+//          arr1.push_back(sum);
+//          cout<<arr1[i]<<" ";
+//     }
+//     int value = arr1[right]-arr1[left];
+//     return value;
+
+    
+// }
+// int main(){
+//     vector<int> arr = {2, 4, 6, 8, 10, 12, 14};
+//     vector<int> arr1;
+//     int left;
+//     int right;
+//     cout<<"Enter the left index: "<<endl;
+//     cin>>left;
+//     cout<<"Enter the right index: "<<endl;
+//     cin>>right;
+//     int value1 = prefix_sum(arr, arr1, left, right);
+//     cout<<value1<<endl;
+
+//     return 0;
+// }
+
+//sliding window concept;
 #include<iostream>
 #include<vector>
 using namespace std;
-int binary_search(vector<int> &arr, int num){
-    int start = 0;
-        int end = arr.size()-1;
-        int target = num;
-        int middle = (start+end)/2;
-        while(start<=end){
-            middle = (start+end)/2;
-            if(arr[middle] == target){
-                return middle;
-            }
-            else if(arr[middle]>target){
-                end = middle-1;
-            }
-            else if(arr[middle]<target){
-                start = middle+1;
-            }
-        }
+int sliding_window(vector<int> &arr, vector<int> &arr1){
+    int sum = arr[0]+arr[1]+arr[2];
+    for (int i = 0; i < arr.size()-3; i++)
+    {
+        sum = sum-arr[i]+arr[i+3];
+        arr1.push_back(sum);
+    }
+    return sum;
 }
 int main(){
-    vector<int> arr={1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45};
-    int num;
-    cout<<"Enter the odd number: "<<endl;
-    cin>>num;
-    if(num<=0){
-        cout<<"0 and negative numbers are not allowed"<<endl;
-        return 0;
-    }
-    if(num%2==0){
-        cout<<"even numbers not allowed: "<<endl;
-        return 0;
-    }
-    int index = binary_search(arr, num);
-    cout<<index<<endl;
+    vector<int> arr={2,4,3,5,23,56,32,54,12,65,765,45,34,12,34,23,565};
+    vector<int> arr1;
+    int value = sliding_window(arr, arr1);
+    cout<<value;
     return 0;
 }
